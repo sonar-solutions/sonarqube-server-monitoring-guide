@@ -11,7 +11,7 @@ Before setting up monitoring, the following must be in place.
 The SonarQube Prometheus metrics endpoint is always available, but the JVM metrics for the web and Compute Engine processes are exposed by a JMX exporter that is bundled in the Helm chart and disabled by default. Enable it in your `values.yaml`:
 
 ```yaml
-# Community, Developer, and Enterprise editions
+# Community Build, Developer, and Enterprise editions
 prometheusExporter:
   enabled: true
 ```

@@ -211,12 +211,12 @@ Scrape duration is not a SonarQube application metric; it is a Prometheus-side o
 
 **What it shows:** The time in seconds Prometheus spent on each scrape, broken down by pod and endpoint. Each line in the chart represents one pod+endpoint pair. The legend on the right shows **mean**, **p99**, and **max** scrape durations over the visible time range.
 
-A typical SonarQube pod exposes three monitored endpoints:
-- **`api/monitoring/metrics`** — the SonarQube application metrics endpoint. This is the source for most of the data shown elsewhere in the dashboard.
-- **`web`** — the Web server process endpoint (JVM metrics).
-- **`ce`** — the Compute Engine process endpoint (JVM metrics).
+A typical SonarQube pod exposes three monitored endpoints, shown in the legend by their `endpoint` label:
+- **`http`** — the SonarQube application metrics endpoint (`/api/monitoring/metrics`). This is the source for most of the data shown elsewhere in the dashboard.
+- **`monitoring-web`** — the Web server process endpoint (JVM metrics).
+- **`monitoring-ce`** — the Compute Engine process endpoint (JVM metrics).
 
-**Why it matters:** Under normal conditions, scrapes complete in tens to a few hundred milliseconds. A sustained increase — especially on the `api/monitoring/metrics` endpoint — signals that SonarQube's web server is responding slowly. This can mean the server is under heavy load, running low on heap, or experiencing another resource bottleneck.
+**Why it matters:** Under normal conditions, scrapes complete in tens to a few hundred milliseconds. A sustained increase — especially on the `http` (application metrics) endpoint — signals that SonarQube's web server is responding slowly. This can mean the server is under heavy load, running low on heap, or experiencing another resource bottleneck.
 
 There is no single threshold value to treat as an alarm. What matters is the **trend**: a stable value at any level is fine; a value that is climbing and not recovering warrants investigation.
 
