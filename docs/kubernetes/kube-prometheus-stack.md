@@ -43,4 +43,4 @@ Run a quick query in the Prometheus UI or Grafana to confirm data is flowing. Fo
 ## Next steps
 
 - Set up the [Grafana dashboard](../../dashboards/sonarqube-grafana-prometheus-k8s/) to visualize the collected metrics
-- Review the [Prometheus queries](../prometheus-queries.md) reference for recommended alert conditions
+- Review the [Prometheus alert catalogue](../prometheus-queries.md) for recommended alert conditions

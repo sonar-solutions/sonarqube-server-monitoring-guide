@@ -83,5 +83,5 @@ The operationally important signals, each linked to where it is interpreted (das
 | JVM heap — CE | 3 | [JVM Metrics](../dashboards/sonarqube-grafana-prometheus-k8s/how-to-use-this-dashboard.md#sonarqube-web-and-compute-engine-jvm-metrics) | [JVM heap](prometheus-queries.md#jvm-heap) |
 | Scrape duration | 4 | [Scraping Performance](../dashboards/sonarqube-grafana-prometheus-k8s/how-to-use-this-dashboard.md#scraping-performance) | [Optional](prometheus-queries.md#optional-scrape-duration) |
 | Pod readiness | 4 | [Kubernetes Metrics](../dashboards/sonarqube-grafana-prometheus-k8s/how-to-use-this-dashboard.md#kubernetes-metrics) | [Kubernetes platform](prometheus-queries.md#kubernetes-platform) |
-| Container CPU / memory | 4 | [Kubernetes Metrics](../dashboards/sonarqube-grafana-prometheus-k8s/how-to-use-this-dashboard.md#kubernetes-metrics) | [Kubernetes platform](prometheus-queries.md#kubernetes-platform) |
+| Container memory | 4 | [Kubernetes Metrics](../dashboards/sonarqube-grafana-prometheus-k8s/how-to-use-this-dashboard.md#kubernetes-metrics) | [Kubernetes platform](prometheus-queries.md#kubernetes-platform) |
 | Database tier | external | [Database](../dashboards/sonarqube-grafana-prometheus-k8s/how-to-use-this-dashboard.md#database) | out of scope |

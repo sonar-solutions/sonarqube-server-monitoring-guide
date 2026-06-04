@@ -33,7 +33,7 @@ The Helm chart already ships a `PodMonitor` template. Render it with `helm templ
 
 The chart reference differs by edition: non-DCE editions use `sonarqube/sonarqube`, while Data Center Edition uses `sonarqube/sonarqube-dce` (and enables the exporter via `applicationNodes.prometheusExporter.enabled`).
 
-#### Community, Developer, and Enterprise editions
+#### Community Build, Developer, and Enterprise editions
 
 Bash:
 
@@ -90,7 +90,7 @@ If you prefer to write the manifest by hand, adapt one of the following to your 
 > [!NOTE]
 > Two values usually need adjusting: the `namespace` (and the matching `namespaceSelector`) where SonarQube runs, and the `bearerTokenSecret.name` of the monitoring-passcode secret. See [Referencing the system passcode](#referencing-the-system-passcode) for how to find the secret name.
 
-#### Community, Developer, and Enterprise editions
+#### Community Build, Developer, and Enterprise editions
 
 ```yaml
 apiVersion: azmonitoring.coreos.com/v1
@@ -207,5 +207,5 @@ Look for results with labels matching the SonarQube pods — expect one series p
 ## Next steps
 
 - Set up the [Grafana dashboard](../../dashboards/sonarqube-grafana-prometheus-k8s/) using Azure Monitor as a Prometheus data source
-- Review the [Prometheus queries](../prometheus-queries.md) reference for recommended alert conditions
+- Review the [Prometheus alert catalogue](../prometheus-queries.md) for recommended alert conditions
 - To configure alerts, use Azure Monitor alert rules in the Azure portal against your managed Prometheus workspace

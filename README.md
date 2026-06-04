@@ -34,7 +34,7 @@ Operational monitoring gives you early warning before problems surface:
 
 ## Supported versions
 
-This guide targets **SonarQube Server 2025.1 LTA and later**, all editions (Community, Developer, Enterprise, Data Center Edition), deployed on **Kubernetes** via the [official Helm chart](https://github.com/SonarSource/helm-chart-sonarqube).
+This guide targets **SonarQube Server 2025.1 LTA and later**, all editions (Community Build, Developer, Enterprise, Data Center Edition), deployed on **Kubernetes** via the [official Helm chart](https://github.com/SonarSource/helm-chart-sonarqube).
 
 ## Official documentation reference
 
