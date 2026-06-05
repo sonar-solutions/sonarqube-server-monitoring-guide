@@ -26,7 +26,7 @@ absent(sonarqube_web_uptime_minutes{namespace="sonarqube"})
 
 | Severity | Condition | `for` |
 |----------|-----------|-------|
-| critical | expression returns a value (metric absent) | 3m |
+| critical | `== 1` | 3m |
 
 ---
 
