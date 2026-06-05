@@ -4,6 +4,8 @@ This page explains each section of the SonarQube Server Grafana dashboard: what 
 
 The dashboard targets SonarQube Server deployed on Kubernetes, with Prometheus as the metrics backend.
 
+![SonarQube Server Grafana dashboard](../../img/grafana-example-screenshot.png)
+
 ## Quick Glance
 
 The Quick Glance row gives a high-level snapshot of your SonarQube Server instance: whether it is up, how the license is looking, and how much analysis work it has been doing. It is designed to be read at a glance before drilling into any of the detail sections below.

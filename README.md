@@ -2,6 +2,8 @@
 
 This guide covers operational monitoring for SonarQube Server — what to watch, how to query it, and how to set up Prometheus-based monitoring on Kubernetes.
 
+![SonarQube Server Grafana dashboard](img/thumbnail.png)
+
 ## Why monitoring matters
 
 SonarQube Server runs continuous background processing. The Compute Engine (CE) workers pull analysis tasks from a queue and process them one after another. If the queue backs up, developers wait for results. If a worker runs out of heap, it crashes silently and the queue stalls. None of this is visible in the UI until the problem is already affecting users.
