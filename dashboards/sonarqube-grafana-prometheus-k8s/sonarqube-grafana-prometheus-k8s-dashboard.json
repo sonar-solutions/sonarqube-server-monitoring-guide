@@ -94,7 +94,7 @@
         "type": "prometheus",
         "uid": "${PrometheusDataSource}"
       },
-      "description": "Up/down detection relies on the `sonarqube_web_uptime_minutes`.",
+      "description": "Uses `absent_over_time` on `sonarqube_web_uptime_minutes` to detect availability. Returns **Down** (`1`) when no pod has reported the metric in the last minute. Returns no data (null) when at least one pod is reporting — null is mapped to **OK**.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -103,16 +103,22 @@
           "mappings": [
             {
               "options": {
-                "0": {
-                  "index": 1,
-                  "text": "OK"
-                },
                 "1": {
                   "index": 0,
                   "text": "Down"
                 }
               },
               "type": "value"
+            },
+            {
+              "options": {
+                "match": "null+nan",
+                "result": {
+                  "index": 1,
+                  "text": "OK"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -164,7 +170,7 @@
             "uid": "${DS_LUKASF-MONITOR-WORKSPACE}"
           },
           "editorMode": "code",
-          "expr": "absent_over_time(sonarqube_web_uptime_minutes{namespace=\"$namespace\"}[1m]) OR vector(0)",
+          "expr": "absent_over_time(sonarqube_web_uptime_minutes{namespace=\"$namespace\"}[1m])",
           "instant": true,
           "legendFormat": "__auto",
           "range": false,
@@ -2993,6 +2999,6 @@
   "timezone": "utc",
   "title": "SonarQube Kubernetes monitoring",
   "uid": "sonarqube-prometheus-k8s",
-  "version": 8,
+  "version": 9,
   "weekStart": ""
 }
