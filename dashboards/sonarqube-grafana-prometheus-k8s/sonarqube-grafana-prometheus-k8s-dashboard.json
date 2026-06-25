@@ -94,7 +94,7 @@
         "type": "prometheus",
         "uid": "${PrometheusDataSource}"
       },
-      "description": "Uses `absent_over_time` on `sonarqube_web_uptime_minutes` to detect availability. Returns **Down** (`1`) when no pod has reported the metric in the last minute. Returns no data (null) when at least one pod is reporting — null is mapped to **OK**.",
+      "description": "Uses `absent_over_time` on `sonarqube_web_uptime_minutes` to detect availability. Returns **Down** (`1`) when no pod has reported the metric in the last 2 minutes. Returns no data (null) when at least one pod is reporting — null is mapped to **OK**.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -170,7 +170,7 @@
             "uid": "${DS_LUKASF-MONITOR-WORKSPACE}"
           },
           "editorMode": "code",
-          "expr": "absent_over_time(sonarqube_web_uptime_minutes{namespace=\"$namespace\"}[1m])",
+          "expr": "absent_over_time(sonarqube_web_uptime_minutes{namespace=\"$namespace\"}[2m])",
           "instant": true,
           "legendFormat": "__auto",
           "range": false,
